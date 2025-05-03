@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect Sound 38 - Магазин музыкальных инструментов</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Perfect Sound 38</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="cart">
+                <a href="cart.html">Корзина (<span id="cart-count">0</span>)</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="categories">
+            <h2>Категории</h2>
+            <div class="category-grid">
+                <div class="category-item">
+                    <h3><a href="guitars.html">Гитары</a></h3>
+                    <img src="images/guitars.png" alt="Гитары">             
+                </div>
+                <div class="category-item">
+                    <h3><a href="keyboards.html">Клавишные</a></h3>
+                    <img src="images/keyboards.png" alt="Клавишные">
+                </div>
+                <div class="category-item">
+                    <h3><a href="drums.html">Ударные</a></h3>
+                    <img src="images/drums.png" alt="Ударные">
+                </div>
+            </div>
+        </section>
+
+        <section class="popular-products">
+            <h2>Популярные товары</h2>
+            <div class="products-grid">
+                <!-- Товары будут подгружаться через JS -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PS38. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

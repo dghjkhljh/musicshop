@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог музыкальных инструментов - PS38</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel = "stylesheet" href="css/catalog.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">PerfectSound38</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="cart">
+                <a href="cart.html">Корзина (<span id="cart-count">0</span>)</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="catalog-header">
+        <div class="container">
+            <h1>Каталог музыкальных инструментов</h1>
+            <p class="lead">Более 500 моделей от ведущих мировых производителей</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="catalog-container">
+            <aside class="filter-sidebar">
+                <div class="filter-group">
+                    <h3>Категории</h3>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="category" value="guitars" checked> Гитары
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="category" value="keyboards" checked> Клавишные
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="category" value="drums" checked> Ударные
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="category" value="wind" checked> Духовые
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="category" value="accessories" checked> Аксессуары
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="filter-group">
+                    <h3>Цена, ₽</h3>
+                    <div class="price-range">
+                        <input type="number" id="min-price" placeholder="От" min="0">
+                        <input type="number" id="max-price" placeholder="До" min="0">
+                    </div>
+                </div>
+                
+                <div class="filter-group">
+                    <h3>Бренды</h3>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="brand" value="Fender" checked> Fender
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="brand" value="Yamaha" checked> Yamaha
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="brand" value="Gibson" checked> Gibson
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="brand" value="Roland" checked> Roland
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="brand" value="Korg" checked> Korg
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="brand" value="Pearl" checked> Pearl
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="filter-group">
+                    <h3>Наличие</h3>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="availability" value="in-stock" checked> В наличии
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="availability" value="preorder"> Под заказ
+                        </label>
+                    </div>
+                </div>
+                
+                <button class="filter-reset" id="reset-filters">Сбросить фильтры</button>
+            </aside>
+            
+            <div class="catalog-content">
+                <div class="sort-options">
+                    <div class="products-found">Найдено: <span id="products-count">0</span> товаров</div>
+                    <div class="view-options">
+                        <select class="sort-select" id="sort-by">
+                            <option value="price-asc">По возрастанию цены</option>
+                            <option value="price-desc">По убыванию цены</option>
+                            <option value="name-asc">По названию (А-Я)</option>
+                            <option value="name-desc">По названию (Я-А)</option>
+                            <option value="popular">По популярности</option>
+                        </select>
+                        <button class="view-btn active" data-view="grid"><i class="fas fa-th"></i></button>
+                        <button class="view-btn" data-view="list"><i class="fas fa-list"></i></button>
+                    </div>
+                </div>
+                
+                <div class="products-grid" id="products-container">
+                    <!-- Товары загружаются через JS -->
+                </div>
+                
+                <div class="pagination">
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn">4</button>
+                    <button class="page-btn">5</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p>г. Иркутск, ул. Баумана, 214</p>
+                    <p>+7 (3952) 47-16-59</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 PS38. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Расширенные данные товаров
+        const productsData = [
+            // Гитары
+            {
+                id: 101,
+                name: "Fender FA-125 Акустическая гитара",
+                price: 12500,
+                category: "guitars",
+                subcategory: "acoustic",
+                brand: "Fender",
+                image: "images/guitar-acoustic1.jpg",
+                description: "Отличный выбор для начинающих гитаристов",
+                inStock: true,
+                rating: 4.5
+            },
+            {
+                id: 102,
+                name: "Yamaha F310 Акустическая гитара",
+                price: 18900,
+                category: "guitars",
+                subcategory: "acoustic",
+                brand: "Yamaha",
+                image: "images/guitar-acoustic2.jpg",
+                description: "Качественная гитара для начинающих",
+                inStock: true,
+                rating: 4.7
+            },
+            {
+                id: 103,
+                name: "Fender Stratocaster Электрогитара",
+                price: 45000,
+                category: "guitars",
+                subcategory: "electric",
+                brand: "Fender",
+                image: "images/guitar-electric1.jpg",
+                description: "Легендарная электрогитара",
+                inStock: true,
+                rating: 4.9
+            },
+            {
+                id: 104,
+                name: "Gibson Les Paul Электрогитара",
+                price: 68000,
+                category: "guitars",
+                subcategory: "electric",
+                brand: "Gibson",
+                image: "images/guitar-electric2.jpg",
+                description: "Классика рок-музыки",
+                inStock: false,
+                rating: 4.8
+            },
+            {
+                id: 105,
+                name: "Fender Precision Bass Бас-гитара",
+                price: 52000,
+                category: "guitars",
+                subcategory: "bass",
+                brand: "Fender",
+                image: "images/guitar-bass1.jpg",
+                description: "Икона бас-гитар",
+                inStock: true,
+                rating: 4.7
+            },
+            
+            // Клавишные
+            {
+                id: 201,
+                name: "Yamaha P-515 Цифровое пианино",
+                price: 145000,
+                category: "keyboards",
+                subcategory: "pianos",
+                brand: "Yamaha",
+                image: "images/piano1.jpg",
+                description: "Премиальное цифровое пианино",
+                inStock: true,
+                rating: 4.9
+            },
+            {
+                id: 202,
+                name: "Casio Privia PX-S3000 Цифровое пианино",
+                price: 98000,
+                category: "keyboards",
+                subcategory: "pianos",
+                brand: "Casio",
+                image: "images/piano2.jpg",
+                description: "Ультратонкое цифровое пианино",
+                inStock: true,
+                rating: 4.6
+            },
+            {
+                id: 203,
+                name: "Korg Minilogue XD Синтезатор",
+                price: 85000,
+                category: "keyboards",
+                subcategory: "synths",
+                brand: "Korg",
+                image: "images/synth1.jpg",
+                description: "Аналоговый синтезатор с цифровыми эффектами",
+                inStock: true,
+                rating: 4.8
+            },
+            {
+                id: 204,
+                name: "Roland JD-Xi Синтезатор",
+                price: 65000,
+                category: "keyboards",
+                subcategory: "synths",
+                brand: "Roland",
+                image: "images/synth2.jpg",
+                description: "Гибридный синтезатор",
+                inStock: false,
+                rating: 4.5
+            },
+            
+            // Ударные
+            {
+                id: 301,
+                name: "Pearl Export EXX725SP/C Барабанная установка",
+                price: 125000,
+                category: "drums",
+                subcategory: "acoustic",
+                brand: "Pearl",
+                image: "images/drum-set1.jpg",
+                description: "5-компонентная барабанная установка",
+                inStock: true,
+                rating: 4.7
+            },
+            {
+                id: 302,
+                name: "Tama Imperialstar IE52KH6W Барабанная установка",
+                price: 98000,
+                category: "drums",
+                subcategory: "acoustic",
+                brand: "Tama",
+                image: "images/drum-set2.jpg",
+                description: "Комплект для начинающих",
+                inStock: true,
+                rating: 4.5
+            },
+            {
+                id: 303,
+                name: "Roland TD-07KV Электронная барабанная установка",
+                price: 145000,
+                category: "drums",
+                subcategory: "electronic",
+                brand: "Roland",
+                image: "images/electronic-drum1.jpg",
+                description: "Электронная барабанная установка",
+                inStock: true,
+                rating: 4.8
+            },
+            
+            // Духовые
+            {
+                id: 401,
+                name: "Yamaha YAS-280 Альт-саксофон",
+                price: 125000,
+                category: "wind",
+                subcategory: "saxophones",
+                brand: "Yamaha",
+                image: "images/saxophone1.jpg",
+                description: "Профессиональный альт-саксофон",
+                inStock: true,
+                rating: 4.7
+            },
+            
+            // Аксессуары
+            {
+                id: 501,
+                name: "Fender Original гитарные струны",
+                price: 1200,
+                category: "accessories",
+                subcategory: "strings",
+                brand: "Fender",
+                image: "images/strings1.jpg",
+                description: "Набор струн для электрогитары",
+                inStock: true,
+                rating: 4.6
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Инициализация
+            let currentProducts = [...productsData];
+            let currentPage = 1;
+            const productsPerPage = 9;
+            let currentView = 'grid';
+            
+            // Загрузка товаров
+            renderProducts(currentProducts);
+            updateProductsCount(currentProducts.length);
+            
+            // Функция рендеринга товаров
+            function renderProducts(products) {
+                const container = document.getElementById('products-container');
+                const startIndex = (currentPage - 1) * productsPerPage;
+                const paginatedProducts = products.slice(startIndex, startIndex + productsPerPage);
+                
+                container.innerHTML = paginatedProducts.map(product => `
+                    <div class="product-card" data-id="${product.id}" data-category="${product.category}" data-brand="${product.brand}" data-price="${product.price}" data-stock="${product.inStock}">
+                        <img src="${product.image}" alt="${product.name}" class="product-image">
+                        <div class="product-info">
+                            <span class="product-category">${product.brand}</span>
+                            <h3 class="product-title">${product.name}</h3>
+                            <div class="product-price">${product.price.toLocaleString()} ₽</div>
+                            <div class="product-actions">
+                                <a href="product.html?id=${product.id}" class="view-product">Подробнее</a>
+                                <button class="add-to-cart" data-id="${product.id}">В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+                
+                // Назначение обработчиков для кнопок "В корзину"
+                document.querySelectorAll('.add-to-cart').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const productId = parseInt(this.getAttribute('data-id'));
+                        addToCart(productId);
+                    });
+                });
+            }
+            
+            // Функция добавления в корзину
+            function addToCart(productId) {
+                const product = productsData.find(p => p.id === productId);
+                if (!product) return;
+                
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image
+                });
+                localStorage.setItem('cart', JSON.stringify(cart));
+                
+                updateCartCount();
+                alert(`${product.name} добавлен в корзину!`);
+            }
+            
+            // Функция обновления счетчика корзины
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                document.getElementById('cart-count').textContent = cart.length;
+            }
+            
+            // Функция обновления счетчика товаров
+            function updateProductsCount(count) {
+                document.getElementById('products-count').textContent = count;
+            }
+            
+            // Функция фильтрации товаров
+            function filterProducts() {
+                // Получаем выбранные категории
+                const selectedCategories = Array.from(document.querySelectorAll('input[name="category"]:checked')).map(el => el.value);
+                
+                // Получаем выбранные бренды
+                const selectedBrands = Array.from(document.querySelectorAll('input[name="brand"]:checked')).map(el => el.value);
+                
+                // Получаем ценовой диапазон
+                const minPrice = parseInt(document.getElementById('min-price').value) || 0;
+                const maxPrice = parseInt(document.getElementById('max-price').value) || Infinity;
+                
+                // Получаем наличие
+                const inStockOnly = document.querySelector('input[name="availability"][value="in-stock"]').checked;
+                const preorder = document.querySelector('input[name="availability"][value="preorder"]').checked;
+                
+                // Фильтруем товары
+                currentProducts = productsData.filter(product => {
+                    return selectedCategories.includes(product.category) &&
+                           selectedBrands.includes(product.brand) &&
+                           product.price >= minPrice &&
+                           product.price <= maxPrice &&
+                           ((inStockOnly && product.inStock) || (preorder && !product.inStock));
+                });
+                
+                // Сортируем товары
+                sortProducts();
+                
+                // Обновляем отображение
+                renderProducts(currentProducts);
+                updateProductsCount(currentProducts.length);
+                updatePagination();
+            }
+            
+            // Функция сортировки товаров
+            function sortProducts() {
+                const sortBy = document.getElementById('sort-by').value;
+                
+                switch(sortBy) {
+                    case 'price-asc':
+                        currentProducts.sort((a, b) => a.price - b.price);
+                        break;
+                    case 'price-desc':
+                        currentProducts.sort((a, b) => b.price - a.price);
+                        break;
+                    case 'name-asc':
+                        currentProducts.sort((a, b) => a.name.localeCompare(b.name));
+                        break;
+                    case 'name-desc':
+                        currentProducts.sort((a, b) => b.name.localeCompare(a.name));
+                        break;
+                    case 'popular':
+                        currentProducts.sort((a, b) => b.rating - a.rating);
+                        break;
+                }
+            }
+            
+            // Функция обновления пагинации
+            function updatePagination() {
+                const pageCount = Math.ceil(currentProducts.length / productsPerPage);
+                const paginationContainer = document.querySelector('.pagination');
+                
+                paginationContainer.innerHTML = '';
+                for (let i = 1; i <= pageCount; i++) {
+                    const btn = document.createElement('button');
+                    btn.className = `page-btn ${i === currentPage ? 'active' : ''}`;
+                    btn.textContent = i;
+                    btn.addEventListener('click', () => {
+                        currentPage = i;
+                        renderProducts(currentProducts);
+                        document.querySelectorAll('.page-btn').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                    });
+                    paginationContainer.appendChild(btn);
+                }
+            }
+            
+            // Назначение обработчиков событий
+            document.querySelectorAll('.filter-sidebar input').forEach(input => {
+                input.addEventListener('change', filterProducts);
+            });
+            
+            document.getElementById('sort-by').addEventListener('change', () => {
+                sortProducts();
+                renderProducts(currentProducts);
+            });
+            
+            document.getElementById('reset-filters').addEventListener('click', () => {
+                document.querySelectorAll('.filter-sidebar input[type="checkbox"]').forEach(checkbox => {
+                    checkbox.checked = true;
+                });
+                document.getElementById('min-price').value = '';
+                document.getElementById('max-price').value = '';
+                filterProducts();
+            });
+            
+            document.querySelectorAll('.view-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentView = this.getAttribute('data-view');
+                    document.getElementById('products-container').className = `products-${currentView}`;
+                });
+            });
+            
+            // Инициализация корзины
+            updateCartCount();
+        });
+    </script>
+</body>
+</html>
