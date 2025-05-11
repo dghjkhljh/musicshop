@@ -3,26 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Клавишные инструменты - PS38</title>
+    <title>Клавишные инструменты - PerfectSound38</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/keyboards.css">
 </head>
 <body>
-    <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
         <div class="container">
-            <div class="logo">MusicShop</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="catalog.html">Каталог</a></li>
-                    <li><a href="contacts.html">Контакты</a></li>
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-music-note-beamed me-2"></i>PerfectSound38
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="catalog.html">Каталог</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">Контакты</a>
+                    </li>
                 </ul>
-            </nav>
-            <div class="cart">
-                <a href="cart.html">Корзина (<span id="cart-count">0</span>)</a>
+                <div class="d-flex">
+                    <a href="cart.html" class="btn btn-outline-light position-relative">
+                        <i class="bi bi-cart"></i> Корзина
+                        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                    </a>
+                </div>
             </div>
         </div>
-    </header>
+    </nav>
 
     <section class="category-header">
         <div class="container">
@@ -34,7 +50,7 @@
     <main class="container">
         <div class="keyboard-types">
             <a href="#digital-pianos" class="keyboard-type-card">
-                <img src="images/digital-pianos.jpg" alt="Цифровые пианино" class="keyboard-type-image">
+                <img src="images/piano.jpg" alt="Цифровые пианино" class="keyboard-type-image">
                 <div class="keyboard-type-content">
                     <h3 class="keyboard-type-title">Цифровые пианино</h3>
                     <p class="keyboard-type-description">Аутентичное звучание и ощущение акустического пианино с современными функциями</p>
@@ -42,168 +58,52 @@
                 </div>
             </a>
             <a href="#synthesizers" class="keyboard-type-card">
-                <img src="images/synthesizers.jpg" alt="Синтезаторы" class="keyboard-type-image">
+                <img src="images/synth.jpg" alt="Синтезаторы" class="keyboard-type-image">
                 <div class="keyboard-type-content">
                     <h3 class="keyboard-type-title">Синтезаторы</h3>
                     <p class="keyboard-type-description">Создавайте уникальные звуки для любого музыкального стиля</p>
                     <span class="btn">Смотреть все</span>
                 </div>
             </a>
-            </a>
         </div>
 
         <section id="digital-pianos" class="category-section">
             <h2>Цифровые пианино</h2>
             <div class="products-grid" id="digital-pianos-grid">
-                <!-- Товары загружаются через JS -->
+                <!-- Товары будут загружены через JS -->
             </div>
         </section>
 
         <section id="synthesizers" class="category-section">
             <h2>Синтезаторы</h2>
             <div class="products-grid" id="synthesizers-grid">
-                <!-- Товары загружаются через JS -->
+                <!-- Товары будут загружены через JS -->
             </div>
         </section>
-            </div>
-        </div>
     </main>
 
-    <footer>
+    <footer class="bg-dark text-white py-5">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3">PerfectSound38</h5>
+                    <p>Лучшие музыкальные инструменты в Иркутске. Более 10 лет на рынке.</p>
                 </div>
-                <div class="footer-section">
-                    <h4>Контакты</h4>
-                    <p>г. Иркутск, ул. Баумана, 214</p>
-                    <p>+7 (3952) 47-16-59</p>
+                <div class="col-md-3">
+                    <h5 class="fw-bold mb-3">Контакты</h5>
+                    <p class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i> г. Иркутск, ул. Баумана, 214</p>
+                    <p class="mb-2"><i class="bi bi-telephone-fill me-2"></i> +7 (3952) 47-16-59</p>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2025 PS38. Все права защищены.</p>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0 small">&copy; 2025 PerfectSound38. Все права защищены.</p>
             </div>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
-    <script>
-        // Данные товаров для клавишных
-        const keyboardsData = {
-            digitalPianos: [
-                {
-                    id: 801,
-                    name: "Yamaha P-515",
-                    price: 145000,
-                    image: "images/piano1.jpg",
-                    description: "Цифровое пианино премиум-класса с натуральной механикой",
-                    specs: {
-                        "Клавиши": "88 взвешенных клавиш с деревянными элементами",
-                        "Полифония": "256 нот",
-                        "Звуки": "40 встроенных тембров"
-                    }
-                },
-                {
-                    id: 802,
-                    name: "Casio Privia PX-S3000",
-                    price: 98000,
-                    image: "images/piano2.jpg",
-                    description: "Ультратонкое цифровое пианино с Bluetooth",
-                    specs: {
-                        "Клавиши": "88 взвешенных клавиш",
-                        "Полифония": "192 ноты",
-                        "Толщина": "11 см"
-                    }
-                }
-            ],
-            synthesizers: [
-                {
-                    id: 901,
-                    name: "Korg Minilogue XD",
-                    price: 85000,
-                    image: "images/synth1.jpg",
-                    description: "Аналоговый синтезатор с 37 клавишами и цифровыми эффектами",
-                    specs: {
-                        "Клавиши": "37 мини-клавиш",
-                        "Голоса": "4-голосная полифония",
-                        "Осцилляторы": "2 аналоговых + 1 цифровой"
-                    }
-                },
-                {
-                    id: 902,
-                    name: "Roland JD-Xi",
-                    price: 65000,
-                    image: "images/synth2.jpg",
-                    description: "Гибридный синтезатор с аналоговыми и цифровыми звуками",
-                    specs: {
-                        "Клавиши": "37 мини-клавиш",
-                        "Секции": "Аналоговая + 2 цифровых + барабанная",
-                        "Встроенный секвенсор": "Да"
-                    }
-                }
-            ]
-        };
-
-        document.addEventListener('DOMContentLoaded', function() {
-            // Загрузка товаров
-            loadKeyboardProducts('digital-pianos-grid', keyboardsData.digitalPianos);
-            loadKeyboardProducts('synthesizers-grid', keyboardsData.synthesizers);
-            
-            // Обновление счетчика корзины
-            updateCartCount();
-            
-            // Функция загрузки товаров
-            function loadKeyboardProducts(elementId, products) {
-                const container = document.getElementById(elementId);
-                if (!container) return;
-                
-                container.innerHTML = products.map(product => `
-                    <div class="product-card">
-                        <img src="${product.image}" alt="${product.name}">
-                        <div class="product-info">
-                            <h3>${product.name}</h3>
-                            <div class="price">${product.price.toLocaleString()} ₽</div>
-                            <p class="product-description">${product.description}</p>
-                            <div class="product-actions">
-                                <a href="product.html?id=${product.id}" class="view-product">Подробнее</a>
-                                <button class="add-to-cart" data-id="${product.id}">В корзину</button>
-                            </div>
-                        </div>
-                    </div>
-                `).join('');
-                
-                // Назначение обработчиков для кнопок
-                document.querySelectorAll('.add-to-cart').forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        const productId = parseInt(this.getAttribute('data-id'));
-                        const product = [...keyboardsData.digitalPianos, ...keyboardsData.synthesizers].find(p => p.id === productId);
-                        if (product) {
-                            addToCart(product);
-                            updateCartCount();
-                            alert(`${product.name} добавлен в корзину!`);
-                        }
-                    });
-                });
-            }
-            
-            // Функция добавления в корзину
-            function addToCart(product) {
-                let cart = JSON.parse(localStorage.getItem('cart')) || [];
-                cart.push({
-                    id: product.id,
-                    name: product.name,
-                    price: product.price,
-                    image: product.image
-                });
-                localStorage.setItem('cart', JSON.stringify(cart));
-            }
-            
-            // Функция обновления счетчика корзины
-            function updateCartCount() {
-                const cart = JSON.parse(localStorage.getItem('cart')) || [];
-                document.getElementById('cart-count').textContent = cart.length;
-            }
-        });
-    </script>
+    <script src="js/keyboards.js"></script>
 </body>
 </html>

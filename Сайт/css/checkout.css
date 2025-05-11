@@ -1,4 +1,4 @@
-/* Дополнительные стили для страницы оформления */
+/* Стили для страницы оформления заказа */
 .checkout-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -22,8 +22,8 @@
     font-weight: bold;
 }
 
-.form-group input, 
-.form-group select, 
+.form-group input,
+.form-group select,
 .form-group textarea {
     width: 100%;
     padding: 10px;
@@ -55,6 +55,33 @@
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
+}
+
+.order-items {
+    margin-bottom: 20px;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.order-totals {
+    margin-top: 20px;
+}
+
+.order-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.order-row.total {
+    font-weight: bold;
+    font-size: 18px;
 }
 
 @media (max-width: 768px) {

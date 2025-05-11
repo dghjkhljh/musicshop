@@ -1,8 +1,9 @@
- /* Стили для страницы каталога */
- .catalog-header {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/catalog-bg.jpg');
+/* Стили для страницы каталога */
+.catalog-header {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/catalog-bg.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     color: white;
     padding: 100px 0;
     text-align: center;
@@ -93,25 +94,6 @@
 
 .products-found {
     color: #666;
-}
-
-.view-options {
-    display: flex;
-    gap: 10px;
-}
-
-.view-btn {
-    background: white;
-    border: 1px solid #ddd;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.view-btn.active {
-    background: #3498db;
-    color: white;
-    border-color: #3498db;
 }
 
 .products-grid {

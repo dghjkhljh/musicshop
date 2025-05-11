@@ -3,26 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Гитары - PS38</title>
+    <title>Гитары - PerfectSound38</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/guitars.css">
 </head>
 <body>
-    <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
         <div class="container">
-            <div class="logo">PerfectSond38</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="catalog.html">Каталог</a></li>
-                    <li><a href="contacts.html">Контакты</a></li>
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-music-note-beamed me-2"></i>PerfectSound38
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="catalog.html">Каталог</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">Контакты</a>
+                    </li>
                 </ul>
-            </nav>
-            <div class="cart">
-                <a href="cart.html">Корзина (<span id="cart-count">0</span>)</a>
+                <div class="d-flex">
+                    <a href="cart.html" class="btn btn-outline-light position-relative">
+                        <i class="bi bi-cart"></i> Корзина
+                        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                    </a>
+                </div>
             </div>
         </div>
-    </header>
+    </nav>
 
     <section class="category-header">
         <div class="container">
@@ -34,41 +50,37 @@
     <main class="container">
         <div class="subcategories">
             <a href="#acoustic" class="subcategory-card">
-                <img src="images/acoustic-guitars.jpg" alt="Акустические гитары" class="subcategory-image">
+                <img src="images/acoustic.jpg" alt="Акустические гитары" class="subcategory-image">
                 <h3 class="subcategory-title">Акустические</h3>
             </a>
             <a href="#electric" class="subcategory-card">
-                <img src="images/electric-guitars.jpg" alt="Электрогитары" class="subcategory-image">
+                <img src="images/electric.jpg" alt="Электрогитары" class="subcategory-image">
                 <h3 class="subcategory-title">Электрогитары</h3>
             </a>
             <a href="#bass" class="subcategory-card">
-                <img src="images/bass-guitars.jpg" alt="Бас-гитары" class="subcategory-image">
+                <img src="images/bass.jpg" alt="Бас-гитары" class="subcategory-image">
                 <h3 class="subcategory-title">Бас-гитары</h3>
-            </a>
-            <a href="#classic" class="subcategory-card">
-                <img src="images/classic-guitars.jpg" alt="Классические гитары" class="subcategory-image">
-                <h3 class="subcategory-title">Классические</h3>
             </a>
         </div>
 
         <section id="acoustic" class="category-section">
             <h2>Акустические гитары</h2>
             <div class="products-grid" id="acoustic-guitars-grid">
-                <!-- Товары загружаются через JS -->
+                <!-- Товары будут загружены через JS -->
             </div>
         </section>
 
         <section id="electric" class="category-section">
             <h2>Электрогитары</h2>
             <div class="products-grid" id="electric-guitars-grid">
-                <!-- Товары загружаются через JS -->
+                <!-- Товары будут загружены через JS -->
             </div>
         </section>
 
         <section id="bass" class="category-section">
             <h2>Бас-гитары</h2>
             <div class="products-grid" id="bass-guitars-grid">
-                <!-- Товары загружаются через JS -->
+                <!-- Товары будут загружены через JS -->
             </div>
         </section>
 
@@ -82,161 +94,28 @@
         </div>
     </main>
 
-    <footer>
+    <footer class="bg-dark text-white py-5">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3">PerfectSound38</h5>
+                    <p>Лучшие музыкальные инструменты в Иркутске. Более 10 лет на рынке.</p>
                 </div>
-                <div class="footer-section">
-                    <h4>Контакты</h4>
-                    <p>г. Иркутск, ул. Баумана, 214</p>
-                    <p>+7 (3952) 47-16-59</p>
+                <div class="col-md-3">
+                    <h5 class="fw-bold mb-3">Контакты</h5>
+                    <p class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i> г. Иркутск, ул. Баумана, 214</p>
+                    <p class="mb-2"><i class="bi bi-telephone-fill me-2"></i> +7 (3952) 47-16-59</p>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2025 PS38. Все права защищены.</p>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0 small">&copy; 2025 PerfectSound38. Все права защищены.</p>
             </div>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
-    <script>
-        // Данные товаров для гитар
-        const guitarsData = {
-            acoustic: [
-                {
-                    id: 101,
-                    name: "Fender FA-125",
-                    price: 12500,
-                    image: "images/guitar-acoustic1.jpg",
-                    description: "Акустическая гитара с корпусом dreadnought",
-                    specs: {
-                        "Тип": "Акустическая гитара",
-                        "Форма корпуса": "Dreadnought",
-                        "Материал верхней деки": "Ель",
-                        "Количество струн": "6"
-                    }
-                },
-                {
-                    id: 102,
-                    name: "Yamaha F310",
-                    price: 18900,
-                    image: "images/guitar-acoustic2.jpg",
-                    description: "Качественная гитара для начинающих",
-                    specs: {
-                        "Тип": "Акустическая гитара",
-                        "Форма корпуса": "Dreadnought",
-                        "Материал верхней деки": "Ель",
-                        "Количество струн": "6"
-                    }
-                }
-            ],
-            electric: [
-                {
-                    id: 201,
-                    name: "Fender Stratocaster",
-                    price: 45000,
-                    image: "images/guitar-electric1.jpg",
-                    description: "Легендарная электрогитара",
-                    specs: {
-                        "Тип": "Электрогитара",
-                        "Форма корпуса": "Double-cutaway",
-                        "Звукосниматели": "3 сингла",
-                        "Количество струн": "6"
-                    }
-                },
-                {
-                    id: 202,
-                    name: "Gibson Les Paul",
-                    price: 68000,
-                    image: "images/guitar-electric2.jpg",
-                    description: "Классика рок-музыки",
-                    specs: {
-                        "Тип": "Электрогитара",
-                        "Форма корпуса": "Single-cutaway",
-                        "Звукосниматели": "2 хамбакера",
-                        "Количество струн": "6"
-                    }
-                }
-            ],
-            bass: [
-                {
-                    id: 301,
-                    name: "Fender Precision Bass",
-                    price: 52000,
-                    image: "images/guitar-bass1.jpg",
-                    description: "Икона бас-гитар",
-                    specs: {
-                        "Тип": "Бас-гитара",
-                        "Мензура": "34 дюйма",
-                        "Звукосниматели": "1 сплит-хамбакер",
-                        "Количество струн": "4"
-                    }
-                }
-            ]
-        };
-
-        document.addEventListener('DOMContentLoaded', function() {
-            // Загрузка товаров
-            loadGuitarProducts('acoustic-guitars-grid', guitarsData.acoustic);
-            loadGuitarProducts('electric-guitars-grid', guitarsData.electric);
-            loadGuitarProducts('bass-guitars-grid', guitarsData.bass);
-            
-            // Обновление счетчика корзины
-            updateCartCount();
-            
-            // Функция загрузки товаров
-            function loadGuitarProducts(elementId, products) {
-                const container = document.getElementById(elementId);
-                if (!container) return;
-                
-                container.innerHTML = products.map(product => `
-                    <div class="product-card">
-                        <img src="${product.image}" alt="${product.name}">
-                        <div class="product-info">
-                            <h3>${product.name}</h3>
-                            <div class="price">${product.price.toLocaleString()} ₽</div>
-                            <p class="product-description">${product.description}</p>
-                            <div class="product-actions">
-                                <a href="product.html?id=${product.id}" class="view-product">Подробнее</a>
-                                <button class="add-to-cart" data-id="${product.id}">В корзину</button>
-                            </div>
-                        </div>
-                    </div>
-                `).join('');
-                
-                // Назначение обработчиков для кнопок
-                document.querySelectorAll('.add-to-cart').forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        const productId = parseInt(this.getAttribute('data-id'));
-                        const product = [...guitarsData.acoustic, ...guitarsData.electric, ...guitarsData.bass].find(p => p.id === productId);
-                        if (product) {
-                            addToCart(product);
-                            updateCartCount();
-                            alert(`${product.name} добавлен в корзину!`);
-                        }
-                    });
-                });
-            }
-            
-            // Функция добавления в корзину
-            function addToCart(product) {
-                let cart = JSON.parse(localStorage.getItem('cart')) || [];
-                cart.push({
-                    id: product.id,
-                    name: product.name,
-                    price: product.price,
-                    image: product.image
-                });
-                localStorage.setItem('cart', JSON.stringify(cart));
-            }
-            
-            // Функция обновления счетчика корзины
-            function updateCartCount() {
-                const cart = JSON.parse(localStorage.getItem('cart')) || [];
-                document.getElementById('cart-count').textContent = cart.length;
-            }
-        });
-    </script>
+    <script src="js/guitars.js"></script>
 </body>
 </html>

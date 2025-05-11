@@ -3,206 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Товар - PS38</title>
+    <title>Товар - PerfectSound38</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/product.css">
 </head>
 <body>
-    <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
         <div class="container">
-            <div class="logo">MusicShop</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="catalog.html">Каталог</a></li>
-                    <li><a href="contacts.html">Контакты</a></li>
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-music-note-beamed me-2"></i>PerfectSound38
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="catalog.html">Каталог</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">Контакты</a>
+                    </li>
                 </ul>
-            </nav>
-            <div class="cart">
-                <a href="cart.html">Корзина (<span id="cart-count">0</span>)</a>
+                <div class="d-flex">
+                    <a href="cart.html" class="btn btn-outline-light position-relative">
+                        <i class="bi bi-cart"></i> Корзина
+                        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                    </a>
+                </div>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <main class="container">
+    <main class="container py-5">
         <div class="product-page">
             <div class="product-images">
-                <img src="" alt="Изображение товара" id="main-image">
-                <div class="thumbnails" id="thumbnails">
+                <img src="" alt="Изображение товара" id="main-image" class="img-fluid rounded">
+                <div class="thumbnails mt-3" id="thumbnails">
                     <!-- Миниатюры будут добавлены через JS -->
                 </div>
             </div>
-
+            
             <div class="product-details">
                 <h1 class="product-title" id="product-title">Название товара</h1>
                 <div class="product-price" id="product-price">0 ₽</div>
-                <div class="product-rating">
+                
+                <div class="product-rating mb-4">
                     <div class="stars">★★★★☆</div>
-                    <span class="reviews-count">(0 отзывов)</span>
+                    <span class="reviews-count ms-2">(0 отзывов)</span>
                 </div>
                 
-                <button class="add-to-cart" id="add-to-cart-btn">Добавить в корзину</button>
+                <button class="btn btn-primary btn-lg add-to-cart" id="add-to-cart-btn">Добавить в корзину</button>
                 
-                <div class="product-specs">
+                <div class="product-specs mt-5">
                     <h3>Характеристики</h3>
-                    <table class="specs-table" id="specs-table">
+                    <table class="table specs-table mt-3" id="specs-table">
                         <!-- Характеристики будут добавлены через JS -->
                     </table>
                 </div>
                 
-                <div class="product-description">
+                <div class="product-description mt-5">
                     <h3>Описание</h3>
-                    <p id="product-description">Описание товара...</p>
+                    <p id="product-description" class="mt-3">Описание товара...</p>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer>
+    <footer class="bg-dark text-white py-5">
         <div class="container">
-            <p>&copy; 2025 PS38. Все права защищены.</p>
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3">PerfectSound38</h5>
+                    <p>Лучшие музыкальные инструменты в Иркутске. Более 10 лет на рынке.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="fw-bold mb-3">Контакты</h5>
+                    <p class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i> г. Иркутск, ул. Баумана, 214</p>
+                    <p class="mb-2"><i class="bi bi-telephone-fill me-2"></i> +7 (3952) 47-16-59</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0 small">&copy; 2025 PerfectSound38. Все права защищены.</p>
+            </div>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
-    <script>
-        // Данные товаров (обычно получаются с сервера)
-        const products = {
-            1: {
-                id: 1,
-                name: "Fender Stratocaster",
-                price: 45000,
-                category: "Электрогитары",
-                brand: "Fender",
-                country: "США",
-                weight: "3.5 кг",
-                description: "Легендарная электрогитара с фирменным звуком. Корпус из ольхи, гриф из клена, 22 лада. Идеальный выбор для различных музыкальных стилей.",
-                images: [
-                    "images/guitar1.jpg",
-                    "images/guitar1-thumb1.jpg",
-                    "images/guitar1-thumb2.jpg"
-                ],
-                specs: {
-                    "Тип": "Электрогитара",
-                    "Бренд": "Fender",
-                    "Страна производства": "США",
-                    "Материал корпуса": "Ольха",
-                    "Материал грифа": "Клен",
-                    "Количество ладов": "22",
-                    "Вес": "3.5 кг",
-                    "Гарантия": "2 года"
-                }
-            },
-            2: {
-                id: 2,
-                name: "Yamaha P-125",
-                price: 65000,
-                category: "Цифровые пианино",
-                brand: "Yamaha",
-                country: "Япония",
-                weight: "22 кг",
-                description: "Цифровое пианино с молоточковой механикой и 88 взвешенными клавишами. Отличное звучание и реалистичная игра.",
-                images: [
-                    "images/piano1.jpg",
-                    "images/piano1-thumb1.jpg",
-                    "images/piano1-thumb2.jpg"
-                ],
-                specs: {
-                    "Тип": "Цифровое пианино",
-                    "Бренд": "Yamaha",
-                    "Страна производства": "Япония",
-                    "Количество клавиш": "88 (взвешенные)",
-                    "Полифония": "192 ноты",
-                    "Вес": "22 кг",
-                    "Гарантия": "3 года"
-                }
-            }
-        };
-
-        document.addEventListener('DOMContentLoaded', function() {
-            // Получаем ID товара из URL
-            const urlParams = new URLSearchParams(window.location.search);
-            const productId = parseInt(urlParams.get('id'));
-            const product = products[productId];
-            
-            if (!product) {
-                // Если товар не найден
-                document.querySelector('main').innerHTML = `
-                    <div class="product-not-found">
-                        <h2>Товар не найден</h2>
-                        <p>Извините, запрашиваемый товар не существует или был удален.</p>
-                        <a href="catalog.html" class="back-to-catalog">Вернуться в каталог</a>
-                    </div>
-                `;
-                return;
-            }
-            
-            // Заполняем данные товара
-            document.getElementById('product-title').textContent = product.name;
-            document.getElementById('product-price').textContent = product.price.toLocaleString() + ' ₽';
-            document.getElementById('product-description').textContent = product.description;
-            
-            // Устанавливаем главное изображение
-            const mainImage = document.getElementById('main-image');
-            mainImage.src = product.images[0];
-            mainImage.alt = product.name;
-            
-            // Добавляем миниатюры
-            const thumbnailsContainer = document.getElementById('thumbnails');
-            product.images.slice(1).forEach(imgSrc => {
-                const thumbnail = document.createElement('img');
-                thumbnail.src = imgSrc;
-                thumbnail.alt = product.name;
-                thumbnail.className = 'thumbnail';
-                thumbnail.addEventListener('click', () => {
-                    mainImage.src = imgSrc;
-                });
-                thumbnailsContainer.appendChild(thumbnail);
-            });
-            
-            // Заполняем характеристики
-            const specsTable = document.getElementById('specs-table');
-            for (const [key, value] of Object.entries(product.specs)) {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${key}</td>
-                    <td>${value}</td>
-                `;
-                specsTable.appendChild(row);
-            }
-            
-            // Обработчик кнопки "Добавить в корзину"
-            document.getElementById('add-to-cart-btn').addEventListener('click', function() {
-                // Получаем текущую корзину из localStorage
-                let cart = JSON.parse(localStorage.getItem('cart')) || [];
-                
-                // Добавляем товар в корзину
-                cart.push({
-                    id: product.id,
-                    name: product.name,
-                    price: product.price,
-                    image: product.images[0]
-                });
-                
-                // Сохраняем обновленную корзину
-                localStorage.setItem('cart', JSON.stringify(cart));
-                
-                // Обновляем счетчик корзины
-                updateCartCount();
-                
-                // Показываем уведомление
-                alert('Товар добавлен в корзину!');
-            });
-            
-            // Функция обновления счетчика корзины
-            function updateCartCount() {
-                const cart = JSON.parse(localStorage.getItem('cart')) || [];
-                document.getElementById('cart-count').textContent = cart.length;
-            }
-            
-            // Инициализируем счетчик
-            updateCartCount();
-        });
-    </script>
+    <script src="js/product.js"></script>
 </body>
 </html>

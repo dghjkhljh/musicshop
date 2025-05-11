@@ -3,202 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Оформление заказа - PS38</title>
+    <title>Оформление заказа - PerfectSound38</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/checkout.css">
 </head>
 <body>
-    <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
         <div class="container">
-            <div class="logo">Perfect Sound 38</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="catalog.html">Каталог</a></li>
-                    <li><a href="contacts.html">Контакты</a></li>
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-music-note-beamed me-2"></i>PerfectSound38
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="catalog.html">Каталог</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">Контакты</a>
+                    </li>
                 </ul>
-            </nav>
-            <div class="cart">
-                <a href="cart.html">Корзина (<span id="cart-count">0</span>)</a>
+                <div class="d-flex">
+                    <a href="cart.html" class="btn btn-outline-light position-relative">
+                        <i class="bi bi-cart"></i> Корзина
+                        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                    </a>
+                </div>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <main class="container">
+    <main class="container py-5">
         <h1>Оформление заказа</h1>
         
-        <div class="checkout-container">
-            <div class="checkout-form">
-                <form id="order-form">
-                    <h2>Контактная информация</h2>
-                    <div class="form-group">
-                        <label for="name">ФИО*</label>
-                        <input type="text" id="name" required>
+        <div class="row mt-4">
+            <div class="col-lg-8">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="h4 mb-4">Контактная информация</h2>
+                        <form id="order-form">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">ФИО *</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Телефон *</label>
+                                <input type="tel" class="form-control" id="phone" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email *</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            
+                            <h2 class="h4 mb-4 mt-5">Способ доставки</h2>
+                            <div class="mb-3">
+                                <select class="form-select" id="delivery-method">
+                                    <option value="courier">Курьером (до двери)</option>
+                                    <option value="pickup">Самовывоз (г. Иркутск, ул. Баумана, 214)</option>
+                                    <option value="post">Почта России</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="address" class="form-label">Адрес доставки *</label>
+                                <textarea class="form-control" id="address" rows="3" required></textarea>
+                            </div>
+                            
+                            <h2 class="h4 mb-4 mt-5">Способ оплаты</h2>
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="payment" id="payment-card" value="card" checked>
+                                    <label class="form-check-label" for="payment-card">
+                                        Банковской картой онлайн
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="payment" id="payment-cash" value="cash">
+                                    <label class="form-check-label" for="payment-cash">
+                                        Наличными при получении
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="payment" id="payment-sbp" value="sbp">
+                                    <label class="form-check-label" for="payment-sbp">
+                                        СБП (Система быстрых платежей)
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="comments" class="form-label">Комментарий к заказу</label>
+                                <textarea class="form-control" id="comments" rows="3"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-lg w-100 mt-4">Подтвердить заказ</button>
+                        </form>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Телефон*</label>
-                        <input type="tel" id="phone" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email*</label>
-                        <input type="email" id="email" required>
-                    </div>
-                    
-                    <h2>Способ доставки</h2>
-                    <div class="form-group">
-                        <select id="delivery-method">
-                            <option value="courier">Курьером (до двери)</option>
-                            <option value="pickup">Самовывоз (г. Иркутск, ул. Баумана, 214)</option>
-                            <option value="post">Почта России</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group delivery-address">
-                        <label for="address">Адрес доставки*</label>
-                        <textarea id="address" rows="3" required></textarea>
-                    </div>
-                    
-                    <h2>Способ оплаты</h2>
-                    <div class="payment-methods">
-                        <div class="payment-method">
-                            <input type="radio" id="payment-card" name="payment" value="card" checked>
-                            <label for="payment-card">Банковской картой онлайн</label>
-                        </div>
-                        
-                        <div class="payment-method">
-                            <input type="radio" id="payment-cash" name="payment" value="cash">
-                            <label for="payment-cash">Наличными при получении</label>
-                        </div>
-                        
-                        <div class="payment-method">
-                            <input type="radio" id="payment-sbp" name="payment" value="sbp">
-                            <label for="payment-sbp">СБП (Система быстрых платежей)</label>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="comments">Комментарий к заказу</label>
-                        <textarea id="comments" rows="3"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-order">Подтвердить заказ</button>
-                </form>
+                </div>
             </div>
             
-            <div class="checkout-summary">
-                <h2>Ваш заказ</h2>
-                <div class="order-items" id="order-items">
-                    <!-- Товары будут подгружаться через JS -->
-                </div>
-                <div class="order-totals">
-                    <div class="order-row">
-                        <span>Товары:</span>
-                        <span id="subtotal">0 ₽</span>
-                    </div>
-                    <div class="order-row">
-                        <span>Доставка:</span>
-                        <span id="delivery-cost">0 ₽</span>
-                    </div>
-                    <div class="order-row total">
-                        <span>Итого:</span>
-                        <span id="order-total">0 ₽</span>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="h4 mb-4">Ваш заказ</h2>
+                        <div class="order-items" id="order-items">
+                            <!-- Товары будут загружены через JS -->
+                        </div>
+                        
+                        <div class="order-totals mt-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Товары:</span>
+                                <span id="subtotal">0 ₽</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Доставка:</span>
+                                <span id="delivery-cost">0 ₽</span>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between fw-bold">
+                                <span>Итого:</span>
+                                <span id="order-total">0 ₽</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer>
+    <footer class="bg-dark text-white py-5">
         <div class="container">
-            <p>&copy; 2025 PS38. Все права защищены.</p>
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3">PerfectSound38</h5>
+                    <p>Лучшие музыкальные инструменты в Иркутске. Более 10 лет на рынке.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="fw-bold mb-3">Контакты</h5>
+                    <p class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i> г. Иркутск, ул. Баумана, 214</p>
+                    <p class="mb-2"><i class="bi bi-telephone-fill me-2"></i> +7 (3952) 47-16-59</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0 small">&copy; 2025 PerfectSound38. Все права защищены.</p>
+            </div>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Загрузка товаров в корзине
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const orderItems = document.getElementById('order-items');
-            const subtotalElement = document.getElementById('subtotal');
-            const deliveryCostElement = document.getElementById('delivery-cost');
-            const orderTotalElement = document.getElementById('order-total');
-            
-            if (cart.length === 0) {
-                orderItems.innerHTML = '<p>Ваша корзина пуста</p>';
-                return;
-            }
-            
-            // Отображение товаров
-            orderItems.innerHTML = cart.map(item => `
-                <div class="order-item">
-                    <div class="item-name">${item.name}</div>
-                    <div class="item-price">${item.price.toLocaleString()} ₽</div>
-                </div>
-            `).join('');
-            
-            // Расчет стоимости
-            const subtotal = cart.reduce((sum, item) => sum + item.price, 0);
-            const deliveryCost = calculateDeliveryCost();
-            const total = subtotal + deliveryCost;
-            
-            subtotalElement.textContent = subtotal.toLocaleString() + ' ₽';
-            deliveryCostElement.textContent = deliveryCost === 0 ? 'Бесплатно' : deliveryCost.toLocaleString() + ' ₽';
-            orderTotalElement.textContent = total.toLocaleString() + ' ₽';
-            
-            // Обработка формы
-            document.getElementById('order-form').addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Собираем данные формы
-                const orderData = {
-                    customer: {
-                        name: document.getElementById('name').value,
-                        phone: document.getElementById('phone').value,
-                        email: document.getElementById('email').value,
-                        address: document.getElementById('address').value
-                    },
-                    delivery: document.getElementById('delivery-method').value,
-                    payment: document.querySelector('input[name="payment"]:checked').value,
-                    comments: document.getElementById('comments').value,
-                    items: cart,
-                    total: total
-                };
-                
-                // Здесь должна быть отправка данных на сервер
-                console.log('Order data:', orderData);
-                
-                // Очищаем корзину
-                localStorage.removeItem('cart');
-                
-                // Перенаправляем на страницу благодарности
-                window.location.href = 'thank-you.html';
-            });
-            
-            // Расчет стоимости доставки
-            function calculateDeliveryCost() {
-                const method = document.getElementById('delivery-method').value;
-                
-                if (method === 'pickup') {
-                    return 0;
-                } else if (method === 'courier') {
-                    return 500; // Пример стоимости курьерской доставки
-                } else {
-                    return 800; // Пример стоимости почтовой доставки
-                }
-            }
-            
-            // Обновляем стоимость при изменении способа доставки
-            document.getElementById('delivery-method').addEventListener('change', function() {
-                const deliveryCost = calculateDeliveryCost();
-                const total = subtotal + deliveryCost;
-                
-                deliveryCostElement.textContent = deliveryCost === 0 ? 'Бесплатно' : deliveryCost.toLocaleString() + ' ₽';
-                orderTotalElement.textContent = total.toLocaleString() + ' ₽';
-            });
-        });
-    </script>
+    <script src="js/checkout.js"></script>
 </body>
 </html>
