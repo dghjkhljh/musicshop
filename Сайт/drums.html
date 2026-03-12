@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ударные инструменты - PerfectSound38</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/drums.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-music-note-beamed me-2"></i>PerfectSound38
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="catalog.html">Каталог</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">Контакты</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="cart.html" class="btn btn-outline-light position-relative">
+                        <i class="bi bi-cart"></i> Корзина
+                        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="category-header">
+        <div class="container">
+            <h1>Ударные инструменты</h1>
+            <p class="lead">Профессиональные барабанные установки для музыкантов любого уровня</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="subcategories">
+            <a href="#acoustic-drums" class="subcategory-card">
+                <img src="images/acdrums.jpg" alt="Акустические установки" class="subcategory-image">
+                <h3 class="subcategory-title">Акустические установки</h3>
+            </a>
+            <a href="#electronic-drums" class="subcategory-card">
+                <img src="images/rolanddr.jpg" alt="Электронные барабаны" class="subcategory-image">
+                <h3 class="subcategory-title">Электронные барабаны</h3>
+            </a>
+        </div>
+
+        <section id="acoustic-drums" class="category-section">
+            <h2>Акустические барабанные установки</h2>
+            <div class="products-grid" id="acoustic-drums-grid">
+                <!-- Товары будут загружены через JS -->
+            </div>
+        </section>
+
+        <section id="electronic-drums" class="category-section">
+            <h2>Электронные барабаны</h2>
+            <div class="products-grid" id="electronic-drums-grid">
+                <!-- Товары будут загружены через JS -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3">PerfectSound38</h5>
+                    <p>Лучшие музыкальные инструменты в Иркутске. Более 10 лет на рынке.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="fw-bold mb-3">Контакты</h5>
+                    <p class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i> г. Иркутск, ул. Баумана, 214</p>
+                    <p class="mb-2"><i class="bi bi-telephone-fill me-2"></i> +7 (3952) 47-16-59</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0 small">&copy; 2025 PerfectSound38. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/drums.js"></script>
+</body>
+</html>

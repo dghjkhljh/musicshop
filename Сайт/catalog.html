@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PerfectSound38 - Магазин музыкальных инструментов</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/catalog.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-music-note-beamed me-2"></i>PerfectSound38
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="catalog.html">Каталог</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">Контакты</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="cart.html" class="btn btn-outline-light position-relative">
+                        <i class="bi bi-cart"></i> Корзина
+                        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="catalog-header">
+        <div class="container">
+            <h1>Каталог музыкальных инструментов</h1>
+            <p class="lead">Более 500 моделей от ведущих мировых производителей</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="catalog-container">
+            <aside class="filter-sidebar">
+                <div class="filter-group">
+                    <h3>Категории</h3>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="category" value="guitars" checked> Гитары
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="category" value="keyboards" checked> Клавишные
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="category" value="drums" checked> Ударные
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="category" value="wind" checked> Духовые
+                        </label>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h3>Цена, ₽</h3>
+                    <div class="price-range">
+                        <input type="number" id="min-price" placeholder="От" min="0">
+                        <input type="number" id="max-price" placeholder="До" min="0">
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h3>Бренды</h3>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="brand" value="Fender" checked> Fender
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="brand" value="Yamaha" checked> Yamaha
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="brand" value="Gibson" checked> Gibson
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="brand" value="Roland" checked> Roland
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="brand" value="Korg" checked> Korg
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="brand" value="Hohner" checked> Hohner
+                        </label>
+                    </div>
+                    <div class="filter-option">
+                        <label>
+                            <input type="checkbox" name="brand" value="Pearl" checked> Pearl
+                        </label>
+                    </div>
+                </div>
+                <button class="filter-reset" id="reset-filters">Сбросить фильтры</button>
+            </aside>
+
+            <div class="catalog-content">
+                <div class="sort-options">
+                    <div class="products-found">Найдено: <span id="products-count">0</span> товаров</div>
+                    <div class="view-options">
+                        <select class="sort-select" id="sort-by">
+                            <option value="price-asc">По возрастанию цены</option>
+                            <option value="price-desc">По убыванию цены</option>
+                            <option value="name-asc">По названию (А-Я)</option>
+                            <option value="name-desc">По названию (Я-А)</option>
+                            <option value="popular">По популярности</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="products-grid" id="products-container">
+                    <!-- Товары будут загружены через JS -->
+                </div>
+
+                <div class="pagination">
+                    <!-- Пагинация будет добавлена через JS -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3">PerfectSound38</h5>
+                    <p>Лучшие музыкальные инструменты в Иркутске. Более 10 лет на рынке.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="fw-bold mb-3">Контакты</h5>
+                    <p class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i> г. Иркутск, ул. Баумана, 214</p>
+                    <p class="mb-2"><i class="bi bi-telephone-fill me-2"></i> +7 (3952) 47-16-59</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0 small">&copy; 2025 PerfectSound38. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/catalog.js"></script>
+</body>
+</html>

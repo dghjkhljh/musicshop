@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина - PerfectSound38</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/cart.css">
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-music-note-beamed me-2"></i>PerfectSound38
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="catalog.html">Каталог</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">Контакты</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="cart.html" class="btn btn-outline-light position-relative">
+                        <i class="bi bi-cart"></i> Корзина
+                        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <h1 class="mb-4">Ваша корзина</h1>
+        
+        <div class="cart-items" id="cart-items">
+            <!-- Товары будут загружены через JS -->
+        </div>
+        
+        <div class="cart-summary mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">Итого</h5>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Товары:</span>
+                        <span class="fw-bold" id="subtotal">0 ₽</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Доставка:</span>
+                        <span class="fw-bold" id="delivery-cost">0 ₽</span>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between mb-4">
+                        <span class="h5">Всего:</span>
+                        <span class="h5 text-primary" id="total-price">0 ₽</span>
+                    </div>
+                    <a href="checkout.html" class="btn btn-primary btn-lg w-100" id="checkout-btn">Оформить заказ</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3">PerfectSound38</h5>
+                    <p>Лучшие музыкальные инструменты в Иркутске. Более 10 лет на рынке.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="fw-bold mb-3">Контакты</h5>
+                    <p class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i> г. Иркутск, ул. Баумана, 214</p>
+                    <p class="mb-2"><i class="bi bi-telephone-fill me-2"></i> +7 (3952) 47-16-59</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0 small">&copy; 2025 PerfectSound38. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

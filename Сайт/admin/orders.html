@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказы - Админ-панель PerfectSound38</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+    <div class="admin-container">
+        <!-- Боковое меню -->
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <i class="bi bi-music-note-beamed"></i>
+                <span>PerfectSound38</span>
+                <small>Админ-панель</small>
+            </div>
+            <nav class="admin-nav">
+                <ul>
+                    <li><a href="index.html"><i class="bi bi-speedometer2"></i> Дашборд</a></li>
+                    <li><a href="products.html"><i class="bi bi-guitar"></i> Товары</a></li>
+                    <li class="active"><a href="orders.html"><i class="bi bi-cart-check"></i> Заказы</a></li>
+                    <li><a href="users.html"><i class="bi bi-people"></i> Пользователи</a></li>
+                    <li><a href="/index.html"><i class="bi bi-box-arrow-left"></i> На сайт</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Основное содержимое -->
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>Управление заказами</h1>
+                <div class="admin-user">
+                    <img src="images/admin.jpg" alt="Администратор">
+                    <span>Администратор</span>
+                </div>
+            </header>
+
+            <div class="admin-content">
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Фильтр</span>
+                            <select class="form-select" id="orderStatusFilter">
+                                <option value="all">Все статусы</option>
+                                <option value="new">Новые</option>
+                                <option value="processing">В обработке</option>
+                                <option value="shipped">Отправленные</option>
+                                <option value="completed">Завершенные</option>
+                                <option value="cancelled">Отмененные</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-group mb-3">
+                            <input type="date" class="form-control" id="orderDateFrom">
+                            <span class="input-group-text">по</span>
+                            <input type="date" class="form-control" id="orderDateTo">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Поиск по ID или имени">
+                            <button class="btn btn-outline-secondary" type="button">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Клиент</th>
+                                <th>Дата</th>
+                                <th>Сумма</th>
+                                <th>Статус</th>
+                                <th>Оплата</th>
+                                <th>Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-table-body">
+                            <!-- Заказы будут загружены через JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center mt-4">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Назад</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Вперед</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </main>
+    </div>
+
+    <!-- Модальное окно просмотра заказа -->
+    <div class="modal fade" id="orderDetailsModal" tabindex="-1" aria-labelledby="orderDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderDetailsModalLabel">Детали заказа #<span id="orderId"></span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>Информация о заказе</h6>
+                            <div id="orderInfo"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Товары в заказе</h6>
+                            <div id="orderProducts"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-primary" id="printOrderBtn">
+                        <i class="bi bi-printer"></i> Печать
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/admin-orders.js"></script>
+</body>
+</html>

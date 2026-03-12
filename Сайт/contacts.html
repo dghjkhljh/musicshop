@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - PerfectSound38</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-music-note-beamed me-2"></i>PerfectSound38
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="catalog.html">Каталог</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contacts.html">Контакты</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="cart.html" class="btn btn-outline-light position-relative">
+                        <i class="bi bi-cart"></i> Корзина
+                        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <h1>Контакты</h1>
+        
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="h4 mb-4">Наши контакты</h2>
+                        <p><i class="bi bi-geo-alt-fill me-2"></i> <strong>Адрес:</strong> г. Иркутск, ул. Баумана, 214</p>
+                        <p><i class="bi bi-telephone-fill me-2"></i> <strong>Телефон:</strong> +7 (3952) 47-16-59</p>
+                        <p><i class="bi bi-envelope-fill me-2"></i> <strong>Email:</strong> info@perfectsound38.ru</p>
+                        <p><i class="bi bi-clock-fill me-2"></i> <strong>Часы работы:</strong> Пн-Пт: 10:00-20:00, Сб-Вс: 11:00-18:00</p>
+                        
+                        <div class="mt-4">
+                           <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1a2b3c4d5e6f7g8h9i0j&ll=104.153019,52.351989&z=17&mode=search&text=улица%20Баумана%2C%20214%2F2%2C%20Иркутск%2C%20664053" width="100%" height="300" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="h4 mb-4">Обратная связь</h2>
+                        <form id="contact-form">
+                            <div class="mb-3">
+                                <label for="contact-name" class="form-label">Ваше имя *</label>
+                                <input type="text" class="form-control" id="contact-name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contact-email" class="form-label">Email *</label>
+                                <input type="email" class="form-control" id="contact-email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contact-phone" class="form-label">Телефон</label>
+                                <input type="tel" class="form-control" id="contact-phone">
+                            </div>
+                            <div class="mb-3">
+                                <label for="contact-message" class="form-label">Сообщение *</label>
+                                <textarea class="form-control" id="contact-message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3">PerfectSound38</h5>
+                    <p>Лучшие музыкальные инструменты в Иркутске. Более 10 лет на рынке.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="fw-bold mb-3">Контакты</h5>
+                    <p class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i> г. Иркутск, ул. Баумана, 214</p>
+                    <p class="mb-2"><i class="bi bi-telephone-fill me-2"></i> +7 (3952) 47-16-59</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0 small">&copy; 2025 PerfectSound38. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src ="js/contacts.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --dark-color: #212529;
+    --light-color: #f8f9fa;
+    --danger-color: #dc3545;
+    --success-color: #198754;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--dark-color);
+    background-color: #fff;
+    margin: 0; 
+}
+
+/* Навигация */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+/* Герой-баннер */
+.hero-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+/* Карусель товаров */
+.products-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.products-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.products-carousel::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.products-carousel::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.products-carousel::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.product-card-carousel {
+    min-width: 200px;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.product-card-carousel:hover {
+    transform: translateY(-5px);
+}
+
+.product-card-carousel .card-img-top {
+    height: 150px;
+    object-fit: contain;
+    background-color: #f8f9fa;
+    padding: 15px;
+}
+
+/* Модальное окно товара */
+.product-modal-img {
+    max-height: 300px;
+    object-fit: contain;
+}
+
+/* Подвал */
+footer {
+    background-color: var(--dark-color);
+}
+
+footer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: white !important;
+}
+
+.social-links a {
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    opacity: 0.8;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .hero-banner {
+        padding: 3rem 0;
+    }
+    
+    .hero-banner h1 {
+        font-size: 2.5rem;
+    }
+    
+    .product-card-carousel {
+        min-width: 180px;
+    }
+}
